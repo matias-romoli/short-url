@@ -3,8 +3,6 @@ import shortid from "shortid";
 
 
 async function selectQuery(db, condition, data) {
-  await createTableIfNotExists();
-
   const query = `SELECT * FROM urls WHERE ${condition} = ?`;
   const [rows] = await db.query(query, [data]);
   return rows;
