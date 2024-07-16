@@ -9,9 +9,6 @@ const PORT = process.env.PORT || 8080;
 
 //SRR - Server-Side Rendering
 app.use(express.static(path.join(path.resolve(), "client/dist")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(path.resolve(), "client/dist/index.html"));
-});
 
 app.use(cors());
 
