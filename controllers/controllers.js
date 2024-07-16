@@ -49,19 +49,22 @@ export const url = {
   post: async (req, res) => {
     const regex = /^(ftp|http|https):\/\/[^ "]+$/;
     const { data } = req.body;
-
-    const rows = await selectQuery(db, "url", data);
-    if (rows.length > 0) {
-      return res.status(200).json(rows);
-    }
-    if (regex.test(data) === true) {
-      const save = await saveDatabase(data);
-      if (save) {
-        const newRows = await selectQuery(db, "id", save);
-        return res.status(200).json(newRows);
+    try {
+      const rows = await selectQuery(db, "url", data);
+      if (rows.length > 0) {
+        return res.status(200).json(rows);
       }
-    } else {
-      return res.status(404).json("Please enter a valid url.");
+      if (regex.test(data) === true) {
+        const save = await saveDatabase(data);
+        if (save) {
+          const newRows = await selectQuery(db, "id", save);
+          return res.status(200).json(newRows);
+        }
+      } else {
+        return res.status(404).json("Please enter a valid url.");
+      }
+    } catch (error) {
+      return error;
     }
   },
 };
