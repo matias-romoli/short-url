@@ -11,8 +11,7 @@ function Map() {
       {url.map((url) => (
         <div key={url.id} className="http">
           <a className="url__text">
-            {import.meta.env.VITE_URL}
-            {url.short}
+            "https://short-url-3l4s.onrender.com/" + {url.short}
           </a>
           <button className="url__btn" onClick={() => copyClipboard(url.short)}>
             {!copied ? (
