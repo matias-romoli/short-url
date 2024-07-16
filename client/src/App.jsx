@@ -26,17 +26,12 @@ function App() {
               >
                 {!res && <Map url={url} />}
                 {url.length <= 0 && (
-                <div style={{
-                    display:"flex",
-                    justifyContent:"center",
-                    }} >
                 <p style={{
                       opacity: ".5",
                       userSelect: "none",
                     }}>
                     Insert url...
                   </p>
-                </div>   
                 )}
               </div>
             </div>
