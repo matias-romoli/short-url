@@ -1,12 +1,16 @@
 import { db } from "../databases/db.js";
 import shortid from "shortid";
 
+
 async function selectQuery(db, condition, data) {
+  await createTableIfNotExists();
+
   const query = `SELECT * FROM urls WHERE ${condition} = ?`;
   const [rows] = await db.query(query, [data]);
   return rows;
 }
 async function saveDatabase(originalUrl) {
+  await createTableIfNotExists();
   try {
     const shortUrl = shortid.generate();
     const query = "INSERT INTO urls (url, short) VALUES (?, ?)";
@@ -14,6 +18,21 @@ async function saveDatabase(originalUrl) {
     return result.insertId;
   } catch (error) {
     return error;
+  }
+}
+async function createTableIfNotExists() {
+  try {
+    const createTableQuery = `
+      CREATE TABLE IF NOT EXISTS urls (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        url VARCHAR(255) NOT NULL,
+        short VARCHAR(50) NOT NULL
+      )
+    `;
+    await db.query(createTableQuery);
+    console.log("Table 'urls' created or already exists.");
+  } catch (error) {
+    console.error("Error creating table 'urls':", error);
   }
 }
 
@@ -48,3 +67,4 @@ export const url = {
     }
   },
 };
+
