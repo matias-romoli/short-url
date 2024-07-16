@@ -22,7 +22,7 @@ function App() {
               </div>
               <div
                 className="container__url__map"
-                style={!res ? { justifyContent: "center" } : {}}
+                style={{ justifyContent: "center"}}
               >
                 {!res && <Map url={url} />}
                 {url.length <= 0 && (
