@@ -144,7 +144,7 @@ $color-secondary: #6c59c2;
   }
   .container__url__git {
     @include flex(center, center, row);
-    .url__git__btn {
+    .url__git__btn, .url__git__btn > a {
       transition: 0.2s ease-in-out;
       background-color: $color-primary;
       justify-content: center;
