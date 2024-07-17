@@ -40,8 +40,10 @@ function App() {
           </FunctionContextProvider>
           <div className="container__url__git">
             <div className="url__git__btn">
-              <FaGithub className="git" />
-            </div>
+              <a href="https://github.com/matias-romoli/short-url" target="_blank" rel="noopener noreferrer">
+                <FaGithub className="git" />
+             </a>
+          </div>
           </div>
         </div>
       </div>
