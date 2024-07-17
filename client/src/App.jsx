@@ -24,12 +24,14 @@ function App() {
                 className="container__url__map"
                 style={{ justifyContent: "center"}}
               >
-                {!res && <Map url={url} />}
+                {url.length >= 0 && <Map url={url} />}
                 {url.length <= 0 && (
-                <p style={{
+                  <p
+                    style={{
                       opacity: ".5",
                       userSelect: "none",
-                    }}>
+                    }}
+                  >
                     Insert url...
                   </p>
                 )}
