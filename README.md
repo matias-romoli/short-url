@@ -9,21 +9,17 @@
 
 <img src="https://github.com/matias-romoli/short-url/blob/main/home" alt="Home"/>
 
-<p style="text-align: justify; font-size: 14px;"> 
-
+<div align="justify">
 Este proyecto consiste en una aplicación de acortador de URLs desarrollada utilizando Node para el backend y React para el frontend. La aplicación emplea Server-Side Rendering (SSR), lo que permite una renderización rápida y dinámica de las páginas, y por consiguiente de las rutas, optimizando la velocidad de carga. En este caso, se utilizan dos rutas principales.
-
-</p>    
+</div>    
 
 **/url** para manejar las solicitudes **POST** y **GET**.
 
 ### **¿CÓMO FUNCIONAN?**
 
-<p style="text-align: justify; font-size: 14px;">
-
+<div align="justify">
 Ambas rutas están conectadas con la clase DB, que interactúa con una base de datos MySQL. La clase se encarga de crear y reutilizar un 'pool'. Posteriormente, **recupera las URLs** previamente almacenadas, para que no se dupliquen, y guardar las nuevas URLs que se envían desde el frontend. 
-
-</p>    
+</div>       
 
 #### **RUTA POST:**
 
@@ -33,11 +29,10 @@ if (rows.length > 0) {
     return res.status(200).json(rows);
 }
 ```
-<p style="text-align: justify; font-size: 14px;">
 
+<div align="justify">
 Esta ruta verifica si la URL se encuentra existente en la base de datos. Si la URL está registrada, devuelve los datos correspondientes: ID, URL y SHORTURL. Si la URL no existe, se valida que sea una URL válida utilizando una expresión regular.
-
-</p>    
+</div>    
 
 ```
 if (regex.test(data) === true) {
