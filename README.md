@@ -19,11 +19,11 @@ const rows = await db.selectQuery("url", data);
 if (rows.length > 0) {
     return res.status(200).json(rows);
 }
-
+```
 Esta ruta verifica si la URL ya existe en la base de datos. Si la URL ya está registrada, devuelve los datos correspondientes: ID, URL y SHORTURL.
 
 Si la URL no existe, se valida que sea una URL válida utilizando una expresión regular:
-
+```
 if (regex.test(data) === true) {
     const save = await db.saveDatabase(data);
     if (save) {
@@ -33,6 +33,7 @@ if (regex.test(data) === true) {
 } else {
     return res.status(404).json("Por favor ingresa una URL válida.");
 }
+```
 
 Si la URL ingresada es válida, se guarda en la base de datos y se devuelve la URL acortada. Si la URL no es válida, el usuario recibirá el siguiente mensaje de error:
 <img src="https://github.com/matias-romoli/short-url/blob/main/error" alt="Error"/>
