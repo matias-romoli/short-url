@@ -1,3 +1,4 @@
+import { createTableIfNotExists } from "./controllers/controllers.js";
 import { router } from "./routes/routes.js";
 import express from "express";
 import path from "path";
@@ -9,12 +10,16 @@ const PORT = process.env.PORT || 8080;
 
 //SRR - Server-Side Rendering
 app.use(express.static(path.join(path.resolve(), "client/dist")));
-
+app.use(express.json());
 app.use(cors());
 
-app.use(express.json());
-app.use("/", router);
+async function startServer() {
+  await createTableIfNotExists();
+  app.use("/", router);
 
-app.listen(PORT, () => {
-  console.log("listening on");
-});
+  app.listen(PORT, () => {
+    console.log("listening on");
+  });
+}
+
+startServer();

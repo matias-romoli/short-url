@@ -14,7 +14,7 @@ export const FunctionContextProvider = ({ children }) => {
     }
 
     try {
-      const res = await fetch("https://short-url-3l4s.onrender.com/url", {
+      const res = await fetch("http://localhost:8080/url", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,7 +35,7 @@ export const FunctionContextProvider = ({ children }) => {
     }
   };
   const copyClipboard = (text) => {
-    navigator.clipboard.writeText("https://short-url-3l4s.onrender.com/" + text);
+    navigator.clipboard.writeText("http://localhost:8080/" + text);
     toast.success("Text copied!");
     setCopied(true);
     setTimeout(() => setCopied(false), 1000);

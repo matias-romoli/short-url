@@ -1,24 +1,8 @@
-import { db } from "../databases/db.js";
-import shortid from "shortid";
+import { DB } from "../class/class.js";
+const db = new DB();
 
-
-async function selectQuery(db, condition, data) {
-  const query = `SELECT * FROM urls WHERE ${condition} = ?`;
-  const [rows] = await db.query(query, [data]);
-  return rows;
-}
-async function saveDatabase(originalUrl) {
-  await createTableIfNotExists();
-  try {
-    const shortUrl = shortid.generate();
-    const query = "INSERT INTO urls (url, short) VALUES (?, ?)";
-    const [result] = await db.query(query, [originalUrl, shortUrl]);
-    return result.insertId;
-  } catch (error) {
-    return error;
-  }
-}
-async function createTableIfNotExists() {
+export async function createTableIfNotExists() {
+  const connection = await db.database;
   try {
     const createTableQuery = `
       CREATE TABLE IF NOT EXISTS urls (
@@ -27,7 +11,7 @@ async function createTableIfNotExists() {
         short VARCHAR(50) NOT NULL
       )
     `;
-    await db.query(createTableQuery);
+    await connection.query(createTableQuery);
     console.log("Table 'urls' created or already exists.");
   } catch (error) {
     console.error("Error creating table 'urls':", error);
@@ -39,7 +23,7 @@ export const url = {
     const { url } = req.params;
 
     if (url !== undefined) {
-      const result = await selectQuery(db, "short", url);
+      const result = await db.selectQuery("short", url);
       if (result.length > 0) {
         const original = result[0].url;
         res.redirect(original);
@@ -50,14 +34,14 @@ export const url = {
     const regex = /^(ftp|http|https):\/\/[^ "]+$/;
     const { data } = req.body;
     try {
-      const rows = await selectQuery(db, "url", data);
+      const rows = await db.selectQuery("url", data);
       if (rows.length > 0) {
         return res.status(200).json(rows);
       }
       if (regex.test(data) === true) {
-        const save = await saveDatabase(data);
+        const save = await db.saveDatabase(data);
         if (save) {
-          const newRows = await selectQuery(db, "id", save);
+          const newRows = await db.selectQuery("id", save);
           return res.status(200).json(newRows);
         }
       } else {
@@ -68,4 +52,3 @@ export const url = {
     }
   },
 };
-
