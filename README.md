@@ -1,36 +1,41 @@
- 
-Acortador URL con Node y React JS // Short URL with Node and React JS
+# **ACORTADOR DE URL CON NODE.JS Y REACT JS** // **SHORT URL WITH NODE.JS AND REACT JS**
 
-<img src="https://github.com/matias-romoli/short-url/blob/main/home"/> 
+<img src="https://github.com/matias-romoli/short-url/blob/main/home" alt="Home"/>
 
-La aplicación está diseñada mediante Server-Side Rendering (SSR), ya que se renderiza a través del backend con uno de los framework más conocidos: Express JS. De esta forma, se busca una aplicación más rápida y dinámica, mejorando la velocidad de carga de las páginas, y por consiguiente, las rutas, que este caso son dos: /url para el POST y el GET. ¿Que hace cada una? 
+Este proyecto consiste en una **aplicación de acortador de URLs** desarrollada utilizando **Node.js** para el **backend** y **React.js** para el **frontend**. La aplicación emplea **Server-Side Rendering (SSR)**, lo que permite una **renderización rápida y dinámica** de las páginas, optimizando la **velocidad de carga**.
 
-Ambas están conectadas con la clase DB. Esta, interactua con la base de datos MySQL para obtener las URL cargadas previamente en la db y guardar las URL que llegan desde el frontend. En este contexto, se regula que no se vuelva a guardar una URL existente. 
+En este caso, se utilizan **dos rutas principales**:
 
-POST: 
+- **/url** para manejar las solicitudes **POST** y **GET**.
 
-    const rows = await db.selectQuery("url", data);
-      if (rows.length > 0) {
-        return res.status(200).json(rows);
-      }
+### **¿CÓMO FUNCIONA?**
 
-    Verifica si la URL existe en la DB. Si existe, trae los datos: ID, URL Y SHORTURL. Si no,
+Ambas rutas están conectadas con la clase **DB**, que interactúa con una base de datos **MySQL**. La clase se encarga de **recuperar las URLs** previamente almacenadas y **guardar las nuevas URLs** que se envían desde el frontend, evitando que se guarden **URLs duplicadas**.
 
-    if (regex.test(data) === true) {
-        const save = await db.saveDatabase(data);
-        if (save) {
-          const newRows = await db.selectQuery("id", save);
-          return res.status(200).json(newRows);
-        }
-      } else {
-        return res.status(404).json("Please enter a valid url.");
-      }
+#### **RUTA POST:**
 
-    continua, vé que la URL sea correcta y el usuario no ingrese cualquier cosa. Si ingresa cualquier cosa, se verá este error: 
+```javascript
+const rows = await db.selectQuery("url", data);
+if (rows.length > 0) {
+    return res.status(200).json(rows);
+}
 
-<img src="https://github.com/matias-romoli/short-url/blob/main/error"/> 
+Esta ruta verifica si la URL ya existe en la base de datos. Si la URL ya está registrada, devuelve los datos correspondientes: ID, URL y SHORTURL.
 
-Si no, mostrara la URL, brindado la opción de copiarla.
+Si la URL no existe, se valida que sea una URL válida utilizando una expresión regular:
 
+if (regex.test(data) === true) {
+    const save = await db.saveDatabase(data);
+    if (save) {
+        const newRows = await db.selectQuery("id", save);
+        return res.status(200).json(newRows);
+    }
+} else {
+    return res.status(404).json("Por favor ingresa una URL válida.");
+}
 
-<img src="https://github.com/matias-romoli/short-url/blob/main/result"/> 
+Si la URL ingresada es válida, se guarda en la base de datos y se devuelve la URL acortada. Si la URL no es válida, el usuario recibirá el siguiente mensaje de error:
+<img src="https://github.com/matias-romoli/short-url/blob/main/error" alt="Error"/>
+
+Si la URL es válida, la aplicación mostrará la URL acortada, proporcionando la opción de copiarla:
+<img src="https://github.com/matias-romoli/short-url/blob/main/result" alt="Resultado"/>
