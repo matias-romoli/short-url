@@ -10,7 +10,9 @@ function Map() {
     <>
       {url.map((url) => (
         <div key={url.id} className="http">
-          <a className="url__text">http://localhost:8080/{url.short}</a>
+        <a className="url__text">
+          {`${import.meta.env.VITE_URI}/${url.short}`}
+        </a>
           <button className="url__btn" onClick={() => copyClipboard(url.short)}>
             {!copied ? (
               <div className="copy">
