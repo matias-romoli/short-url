@@ -35,7 +35,7 @@ export const FunctionContextProvider = ({ children }) => {
     }
   };
   const copyClipboard = (text) => {
-    navigator.clipboard.writeText("http://localhost:8080/" + text);
+    navigator.clipboard.writeText(import.meta.env.VITE_URL + text);
     toast.success("Text copied!");
     setCopied(true);
     setTimeout(() => setCopied(false), 1000);
