@@ -7,7 +7,6 @@
   <span style="font-size: 18px; font-style: italic;">Create short URLs effortlessly using Node.js & React.js</span>
 </p>
 
-
 <br>
 
 <img src="https://github.com/matias-romoli/short-url/blob/main/home" alt="Home"/>
