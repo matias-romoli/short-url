@@ -18,7 +18,7 @@ Este proyecto consiste en una aplicación de acortador de URLs desarrollada util
 ### **¿CÓMO FUNCIONAN?**
 
 <div align="justify">
-Ambas rutas están conectadas con la clase DB, que interactúa con una base de datos MySQL. La clase se encarga de crear y reutilizar un 'pool'. Posteriormente, **recupera las URLs** previamente almacenadas, para que no se dupliquen, y guardar las nuevas URLs que se envían desde el frontend. 
+Ambas rutas están conectadas con la clase DB, que interactúa con una base de datos MySQL. La clase se encarga de crear y reutilizar un 'pool'. Posteriormente, recupera las URLs previamente almacenadas, para que no se dupliquen, y guardar las nuevas URLs que se envían desde el frontend. 
 </div>       
 
 #### **RUTA POST:**
@@ -33,6 +33,7 @@ if (rows.length > 0) {
 <div align="justify">
 Esta ruta verifica si la URL se encuentra existente en la base de datos. Si la URL está registrada, devuelve los datos correspondientes: ID, URL y SHORTURL. Si la URL no existe, se valida que sea una URL válida utilizando una expresión regular.
 </div>    
+<br>
 
 ```
 if (regex.test(data) === true) {
