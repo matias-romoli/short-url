@@ -1,4 +1,4 @@
 ## Acortador URL con Node y React JS // Short URL with Node and React JS
 
-![screenshot](short-url/home)
+<img src="https://github.com/matias-romoli/short-url/blob/main/home" width="128"/>
 
