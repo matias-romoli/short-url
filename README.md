@@ -1,6 +1,12 @@
 <p align="center">
-    <span style="font-size: 12px;">ACORTADOR DE URL CON NODE.JS Y REACT JS</span> // <span style="font-size: 12px;">SHORT URL WITH NODE.JS AND REACT JS</span>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black" alt="React" />
+  <br/>
+  <span style="font-size: 18px; font-weight: bold;">🚀 ACORTADOR DE URL CON <span style="color:#339933;">NODE.JS</span> Y <span style="color:#61DAFB;">REACT JS</span> 🌍</span>
+  <br/>
+  <span style="font-size: 12px; font-style: italic;">Short URL with Node.js and React.js</span>
 </p>
+
 
 <br>
 
