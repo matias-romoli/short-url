@@ -1,5 +1,5 @@
 <p align="center">
-    <span style="font-size: 12px;">**ACORTADOR DE URL CON NODE.JS Y REACT JS**</span> // <span style="font-size: 12px;">**SHORT URL WITH NODE.JS AND REACT JS**</span>
+    <span style="font-size: 12px;">ACORTADOR DE URL CON NODE.JS Y REACT JS</span> // <span style="font-size: 12px;">SHORT URL WITH NODE.JS AND REACT JS</span>
 </p>
 
 <br>
@@ -44,11 +44,9 @@ if (regex.test(data) === true) {
 <p style="text-align: justify; font-size: 14px;">
 Si la URL ingresada es válida, se guarda en la base de datos y se devuelve la URL acortada. Si la URL no es válida, el usuario recibirá el siguiente mensaje de error:
 </p>
-<br>
 <img src="https://github.com/matias-romoli/short-url/blob/main/error" alt="Error"/>
 
 <p style="text-align: justify; font-size: 14px;">
 Caso contrario, si la URL es válida, la aplicación mostrará la URL acortada, proporcionando la opción de copiarla:
 </p>
-<br>
 <img src="https://github.com/matias-romoli/short-url/blob/main/result" alt="Resultado"/>
