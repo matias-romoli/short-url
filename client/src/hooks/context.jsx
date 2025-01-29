@@ -14,7 +14,7 @@ export const FunctionContextProvider = ({ children }) => {
     }
 
     try {
-      const res = await fetch("http://localhost:8080/url", {
+      const res = await fetch("import.meta.env.VITE_POST", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
