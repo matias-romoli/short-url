@@ -2,9 +2,9 @@
   <img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white" alt="Node.js" />
   <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black" alt="React" />
   <br/>
-  <span style="font-size: 25px; font-weight: bold;">🚀 ACORTADOR DE URL CON <span style="color:#339933;">NODE.JS</span> Y <span style="color:#61DAFB;">REACT JS</span> 🌍</span>
+  <span style="font-size: 25px; font-weight: bold;">🔗 ACORTADOR DE URL CON <span style="color:#339933;">NODE.JS</span> Y <span style="color:#61DAFB;">REACT JS</span> 🚀</span>
   <br/>
-  <span style="font-size: 18px; font-style: italic;">Short URL with Node.js and React.js</span>
+  <span style="font-size: 18px; font-style: italic;">Create short URLs effortlessly using Node.js & React.js</span>
 </p>
 
 
@@ -13,7 +13,7 @@
 <img src="https://github.com/matias-romoli/short-url/blob/main/home" alt="Home"/>
 
 <p style="text-align: justify; font-size: 14px;">
-Este proyecto consiste en una **aplicación de acortador de URLs** desarrollada utilizando Node para el backend y React para el frontend. La aplicación emplea Server-Side Rendering (SSR), lo que permite una renderización rápida y dinámica de las páginas, y por consiguiente de las rutas, optimizando la velocidad de carga. En este caso, se utilizan dos rutas principales:
+Este proyecto consiste en una aplicación de acortador de URLs desarrollada utilizando Node para el backend y React para el frontend. La aplicación emplea Server-Side Rendering (SSR), lo que permite una renderización rápida y dinámica de las páginas, y por consiguiente de las rutas, optimizando la velocidad de carga. En este caso, se utilizan dos rutas principales:
 </p>    
 
 - **/url** para manejar las solicitudes **POST** y **GET**.
