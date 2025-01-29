@@ -55,3 +55,10 @@ Si la URL ingresada es válida, se guarda en la base de datos y se devuelve la U
 Caso contrario, si la URL es válida, la aplicación mostrará la URL acortada, proporcionando la opción de copiarla:
 </p>
 <img src="https://github.com/matias-romoli/short-url/blob/main/result" alt="Resultado"/>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black" alt="React" />
+  <img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Sass-CC6699?style=flat&logo=sass&logoColor=white" alt="Sass" />
+  <img src="https://img.shields.io/badge/Hooks-61DAFB?style=flat&logo=react&logoColor=black" alt="Hooks" />
+</p>
