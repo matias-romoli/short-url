@@ -10,10 +10,10 @@
 <img src="https://github.com/matias-romoli/short-url/blob/main/home" alt="Home"/>
 
 <p style="text-align: justify; font-size: 14px;"> 
-Este proyecto consiste en una aplicación de acortador de URLs desarrollada utilizando Node para el backend y React para el frontend. La aplicación emplea Server-Side Rendering (SSR), lo que permite una renderización rápida y dinámica de las páginas, y por consiguiente de las rutas, optimizando la velocidad de carga. En este caso, se utilizan dos rutas principales: 
+Este proyecto consiste en una aplicación de acortador de URLs desarrollada utilizando Node para el backend y React para el frontend. La aplicación emplea Server-Side Rendering (SSR), lo que permite una renderización rápida y dinámica de las páginas, y por consiguiente de las rutas, optimizando la velocidad de carga. En este caso, se utilizan dos rutas principales.
 </p>    
 
-- **/url** para manejar las solicitudes **POST** y **GET**.
+**/url** para manejar las solicitudes **POST** y **GET**.
 
 ### **¿CÓMO FUNCIONAN?**
 
@@ -30,7 +30,7 @@ if (rows.length > 0) {
 }
 ```
 <p style="text-align: justify; font-size: 14px;">
-Esta ruta verifica si la URL se encuentra existente en la base de datos. Si la URL está registrada, devuelve los datos correspondientes: ID, URL y SHORTURL. Si la URL no existe, se valida que sea una URL válida utilizando una expresión regular:
+Esta ruta verifica si la URL se encuentra existente en la base de datos. Si la URL está registrada, devuelve los datos correspondientes: ID, URL y SHORTURL. Si la URL no existe, se valida que sea una URL válida utilizando una expresión regular.
 </p>    
 
 ```
@@ -56,7 +56,7 @@ if (regex.test(data) === true) {
 <p align="center" style="font-size: 14px; font-style: italic;">🔴 Error al ingresar una URL inválida</p>
 
 <p style="text-align: justify; font-size: 14px;">
-  Caso contrario, si la URL es válida, la aplicación mostrará la URL acortada, proporcionando la opción de copiarla:
+  Caso contrario, si la URL es válida, la aplicación mostrará la URL acortada, proporcionando la opción de copiarla.
 </p>
 
 <p align="center">
