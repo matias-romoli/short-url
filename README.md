@@ -9,7 +9,9 @@
 
 <img src="https://github.com/matias-romoli/short-url/blob/main/home" alt="Home"/>
 
-<p style="text-align: justify; font-size: 14px;"> Este proyecto consiste en una aplicación de acortador de URLs desarrollada utilizando Node para el backend y React para el frontend. La aplicación emplea Server-Side Rendering (SSR), lo que permite una renderización rápida y dinámica de las páginas, y por consiguiente de las rutas, optimizando la velocidad de carga. En este caso, se utilizan dos rutas principales: </p>    
+<p style="text-align: justify; font-size: 14px;"> 
+Este proyecto consiste en una aplicación de acortador de URLs desarrollada utilizando Node para el backend y React para el frontend. La aplicación emplea Server-Side Rendering (SSR), lo que permite una renderización rápida y dinámica de las páginas, y por consiguiente de las rutas, optimizando la velocidad de carga. En este caso, se utilizan dos rutas principales: 
+</p>    
 
 - **/url** para manejar las solicitudes **POST** y **GET**.
 
