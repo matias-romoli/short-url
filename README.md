@@ -1,7 +1,6 @@
-<center>
+<p align="center">
     <small># **ACORTADOR DE URL CON NODE.JS Y REACT JS**</small> // <small>**SHORT URL WITH NODE.JS AND REACT JS**</small>
-</center>
-
+</p>
 
 <img src="https://github.com/matias-romoli/short-url/blob/main/home" alt="Home"/>
 
