@@ -46,15 +46,25 @@ if (regex.test(data) === true) {
     return res.status(404).json("Please enter a valid URL.");
 }
 ```
-<p style="text-align: justify; font-size: 14px;">
-Si la URL ingresada es válida, se guarda en la base de datos y se devuelve la URL acortada. Si la URL no es válida, el usuario recibirá el siguiente mensaje de error:
-</p>
-<img src="https://github.com/matias-romoli/short-url/blob/main/error" alt="Error"/>
+# 🌐 **Funcionalidad de Acortador de URL** 🔗
 
 <p style="text-align: justify; font-size: 14px;">
-Caso contrario, si la URL es válida, la aplicación mostrará la URL acortada, proporcionando la opción de copiarla:
+  Si la URL ingresada es válida, se guarda en la base de datos y se devuelve la URL acortada. Si la URL no es válida, el usuario recibirá el siguiente mensaje de error:
 </p>
-<img src="https://github.com/matias-romoli/short-url/blob/main/result" alt="Resultado"/>
+
+<p align="center">
+  <img src="https://github.com/matias-romoli/short-url/blob/main/error" alt="Error"/>
+</p>
+<p align="center" style="font-size: 14px; font-style: italic;">🔴 **Error al ingresar una URL inválida**</p>
+
+<p style="text-align: justify; font-size: 14px;">
+  Caso contrario, si la URL es válida, la aplicación mostrará la URL acortada, proporcionando la opción de copiarla:
+</p>
+
+<p align="center">
+  <img src="https://github.com/matias-romoli/short-url/blob/main/result" alt="Resultado"/>
+</p>
+<p align="center" style="font-size: 14px; font-style: italic;">✅ **Resultado: URL acortada con éxito**</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black" alt="React" />
@@ -62,3 +72,4 @@ Caso contrario, si la URL es válida, la aplicación mostrará la URL acortada, 
   <img src="https://img.shields.io/badge/Sass-CC6699?style=flat&logo=sass&logoColor=white" alt="Sass" />
   <img src="https://img.shields.io/badge/Hooks-61DAFB?style=flat&logo=react&logoColor=black" alt="Hooks" />
 </p>
+
