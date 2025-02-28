@@ -5,7 +5,3 @@ import express from "express";
 export const router = express.Router();
 router.post("/url", url.post);
 router.get("/:url", url.get);
-
-router.get("/:url", () => {
-  const pepe = "123";
-});
