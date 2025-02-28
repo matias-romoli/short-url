@@ -6,6 +6,4 @@ export const router = express.Router();
 router.post("/url", url.post);
 router.get("/:url", url.get);
 
-router.get("/:url", () => {
-  const pepe = "123";
-});
+router.get("/:url", () => [console.log("Hola")]);
